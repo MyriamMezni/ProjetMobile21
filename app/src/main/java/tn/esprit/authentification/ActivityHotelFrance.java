@@ -8,12 +8,19 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
 
 public class ActivityHotelFrance extends AppCompatActivity {
 
     private Button retourFranceBT;
+
+
 
 
     @Override
@@ -61,4 +68,18 @@ public class ActivityHotelFrance extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityFranceHome.class);
         startActivity(intent);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

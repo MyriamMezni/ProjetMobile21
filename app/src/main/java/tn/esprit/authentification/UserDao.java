@@ -12,5 +12,4 @@ public interface UserDao {
     UserEntity login(String userName,String password);
 
 
-
 }

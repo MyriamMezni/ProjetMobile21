@@ -60,5 +60,7 @@ public class ActivityAngleterreHome extends AppCompatActivity {
     {
         Intent intent = new Intent(this, MainActivity3.class);
         startActivity(intent);
+
+
     }
 }

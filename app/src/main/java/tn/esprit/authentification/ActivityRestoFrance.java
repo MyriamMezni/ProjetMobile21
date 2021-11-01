@@ -61,4 +61,5 @@ public class ActivityRestoFrance extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityFranceHome.class);
         startActivity(intent);
     }
+
 }
