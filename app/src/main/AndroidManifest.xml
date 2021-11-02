@@ -10,6 +10,51 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Authentification">
         <activity
+            android:name=".LoisirsTurquie"
+            android:exported="true" />
+        <activity
+            android:name=".LoisirsTunisie"
+            android:exported="true" />
+        <activity
+            android:name=".LoisirsItalie"
+            android:exported="true" />
+        <activity
+            android:name=".LoisirsEspagne"
+            android:exported="true" />
+        <activity
+            android:name=".LoisirsAngleterre"
+            android:exported="true" />
+        <activity
+            android:name=".RestoTurquie"
+            android:exported="true" />
+        <activity
+            android:name=".RestoTunisie"
+            android:exported="true" />
+        <activity
+            android:name=".RestoItalie"
+            android:exported="true" />
+        <activity
+            android:name=".RestoEspagne"
+            android:exported="true" />
+        <activity
+            android:name=".RestoAngleterre"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityHotelEspagne"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityHotelTurquie"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityHotelTunisie"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityHotelItalie"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityHotelAngleterre"
+            android:exported="true" />
+        <activity
             android:name=".ActivityLoisirsFrance"
             android:exported="true" />
         <activity

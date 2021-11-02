@@ -14,7 +14,22 @@ public  interface HotelDao {
     void addHotel(HotelEntity HotelEntity);
 
     @Query("SELECT * from hotels where pays='France'")
-    List<HotelEntity> ReadAll() ;
+    List<HotelEntity> ReadAllFrance() ;
+
+    @Query("SELECT * from hotels where pays='Tunisie'")
+    List<HotelEntity> ReadAllTunisie() ;
+
+    @Query("SELECT * from hotels where pays='Angleterre'")
+    List<HotelEntity> ReadAllAngleterre() ;
+
+    @Query("SELECT * from hotels where pays='Italie'")
+    List<HotelEntity> ReadAllItalie() ;
+
+    @Query("SELECT * from hotels where pays='Espagne'")
+    List<HotelEntity> ReadAllEspagne() ;
+
+    @Query("SELECT * from hotels where pays='Turquie'")
+    List<HotelEntity> ReadAllTurquie() ;
 
 
 }

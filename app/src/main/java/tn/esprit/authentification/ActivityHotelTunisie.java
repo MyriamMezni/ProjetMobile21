@@ -1,28 +1,32 @@
 package tn.esprit.authentification;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ActivityTurquieHome extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
-    private Button retourMainBT;
-    private Button restaurantFranceBT;
-    private Button hebergementFranceBT;
-    private Button loisirFranceBT;
-
-
+public class ActivityHotelTunisie extends AppCompatActivity {
+    private Button retourTunisieBT;
+    RecyclerView hotelrv;
+    HotelAdapter hotelAdapter;
+    List<HotelEntity> hotels=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_turquie_home);
+        setContentView(R.layout.activity_hotel_tunisie);
+
+
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
         bottomNavigationView.setSelectedItemId(R.id.action_profile);
@@ -50,27 +54,33 @@ public class ActivityTurquieHome extends AppCompatActivity {
             }
         });
 
-        retourMainBT = (Button) findViewById(R.id.RetourMainBT);
-        retourMainBT.setOnClickListener(new View.OnClickListener() {
+        retourTunisieBT = (Button) findViewById(R.id.RetourFranceBT);
+        retourTunisieBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openRetourMainActivity();
+                openRetourTunisieActivity();
             }
         });
 
-        hebergementFranceBT = (Button) findViewById(R.id.HebergementFranceBT);
-        hebergementFranceBT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                startActivity(new Intent(ActivityTurquieHome.this,ActivityHotelTurquie.class));
 
-            }
-        });
+
+
+
+        //setupHotels();
+        hotels=UserDatabase.getUserDatabase(this).hotelDao().ReadAllTunisie();
+        hotelrv=findViewById(R.id.hotelRecyclerView);
+        hotelAdapter=new HotelAdapter(hotels,this);
+        hotelrv.setAdapter(hotelAdapter);
+        hotelrv.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
+
+
+
     }
 
-    private void openRetourMainActivity()
+    private void openRetourTunisieActivity()
     {
-        Intent intent = new Intent(this, MainActivity3.class);
+        Intent intent = new Intent(this, ActivityTunisieHome.class);
         startActivity(intent);
-    }}
+    }
+}

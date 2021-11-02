@@ -44,12 +44,12 @@ public class ActivityHotelFrance extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_settings:
-                        startActivity(new Intent(getApplicationContext(),ActivitySettings.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity3.class));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_notification:
-                        startActivity(new Intent(getApplicationContext(),ActivityNotification.class));
+                        startActivity(new Intent(getApplicationContext(),login.class));
                         finish();
                         overridePendingTransition(0,0);
                         return;
@@ -71,7 +71,7 @@ public class ActivityHotelFrance extends AppCompatActivity {
 
 
        //setupHotels();
-        hotels=UserDatabase.getUserDatabase(this).hotelDao().ReadAll();
+        hotels=UserDatabase.getUserDatabase(this).hotelDao().ReadAllFrance();
         hotelrv=findViewById(R.id.hotelRecyclerView);
         hotelAdapter=new HotelAdapter(hotels,this);
         hotelrv.setAdapter(hotelAdapter);

@@ -35,6 +35,14 @@ Context context;
 
     holder.nomHotel.setText(h.getNomHotel());
     holder.adresse.setText(h.getAdresse());
+        holder.pension.setText("Pension "+h.getPension());
+        holder.nbEtoile.setText(h.getNbEtoile()+" étoiles");
+        holder.prix.setText(h.getPrix()+"TND");
+        holder.service1.setText(h.getService1());
+        holder.service2.setText(h.getService2());
+        holder.service3.setText(h.getService3());
+        holder.equipements.setText(h.getEquipements());
+        holder.note.setText("Note : "+h.getNote());
 
 
     }
@@ -45,11 +53,21 @@ Context context;
     }
 
     public class HotelViewHolder extends  RecyclerView.ViewHolder{
-        TextView   nomHotel,adresse;
+        TextView   nomHotel,adresse,pension,nbEtoile,prix,service1, service2,  service3,  equipements,  note;
+
         public HotelViewHolder(View itemView){
             super(itemView);
             nomHotel=(TextView) itemView.findViewById(R.id.nomHotel);
             adresse=(TextView)itemView.findViewById(R.id.adresse);
+            pension=(TextView) itemView.findViewById(R.id.pension);
+            nbEtoile=(TextView) itemView.findViewById(R.id.nbEtoile);
+            prix=(TextView) itemView.findViewById(R.id.prix);
+            service1=(TextView) itemView.findViewById(R.id.service1);
+            service2=(TextView) itemView.findViewById(R.id.service2);
+            service3=(TextView) itemView.findViewById(R.id.service3);
+            equipements=(TextView) itemView.findViewById(R.id.equipements);
+            note=(TextView) itemView.findViewById(R.id.note);
+
 
 
         }

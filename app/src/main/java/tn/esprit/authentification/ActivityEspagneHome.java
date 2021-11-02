@@ -14,6 +14,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ActivityEspagneHome extends AppCompatActivity {
 
     private Button retourMainBT;
+    private Button restaurantFranceBT;
+    private Button hebergementFranceBT;
+    private Button loisirFranceBT;
 
 
     @Override
@@ -34,12 +37,12 @@ public class ActivityEspagneHome extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_settings:
-                        startActivity(new Intent(getApplicationContext(),ActivitySettings.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity3.class));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_notification:
-                        startActivity(new Intent(getApplicationContext(),ActivityNotification.class));
+                        startActivity(new Intent(getApplicationContext(),login.class));
                         finish();
                         overridePendingTransition(0,0);
                         return;
@@ -52,6 +55,16 @@ public class ActivityEspagneHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openRetourMainActivity();
+            }
+        });
+
+        hebergementFranceBT = (Button) findViewById(R.id.HebergementFranceBT);
+        hebergementFranceBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(ActivityEspagneHome.this,ActivityHotelEspagne.class));
+
             }
         });
     }
