@@ -7,8 +7,9 @@
     tools:context=".ActivityHotelFrance">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/hebergementtext"
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
         android:fontFamily="cursive"
         android:text="Hebergement"
         android:textAlignment="center"
@@ -38,100 +39,17 @@
         android:background="@android:color/white"
         app:menu="@menu/bottom_menu"/>
 
-    <TextView
-        android:id="@+id/nomHotel"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hotelRecyclerView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="624dp"
-        android:text="TextView" />
+        android:layout_below="@+id/hebergementtext"
+        android:layout_marginTop="17dp"
+        android:orientation="vertical"
 
-    <TextView
-        android:id="@+id/adresse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="624dp"
-        android:layout_toEndOf="@+id/nomHotel"
-        android:text="TextView" />
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:layout_editor_absoluteX="1dp"
+        tools:listitem="@layout/activity_recyclerview" />
 
-    <TextView
-        android:id="@+id/pension"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginBottom="623dp"
-        android:layout_toEndOf="@+id/adresse"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/nbEtoile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="622dp"
-        android:layout_toEndOf="@+id/pension"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/prix"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginBottom="623dp"
-        android:layout_toEndOf="@+id/nbEtoile"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/service1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="586dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/service2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="586dp"
-        android:layout_toEndOf="@+id/service1"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/service3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="9dp"
-        android:layout_marginBottom="584dp"
-        android:layout_toEndOf="@+id/service2"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/equipements"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginBottom="584dp"
-        android:layout_toEndOf="@+id/service3"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="582dp"
-        android:layout_toEndOf="@+id/equipements"
-        android:text="TextView" />
 
 </RelativeLayout>

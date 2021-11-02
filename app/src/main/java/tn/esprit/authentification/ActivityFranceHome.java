@@ -5,11 +5,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ActivityFranceHome extends AppCompatActivity {
 
@@ -51,6 +55,16 @@ public class ActivityFranceHome extends AppCompatActivity {
             }
         });
 
+        hebergementFranceBT = (Button) findViewById(R.id.HebergementFranceBT);
+        hebergementFranceBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(ActivityFranceHome.this,ActivityHotelFrance.class));
+
+            }
+        });
+
         restaurantFranceBT = (Button) findViewById(R.id.RestaurantFranceBT);
         restaurantFranceBT.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,15 +75,16 @@ public class ActivityFranceHome extends AppCompatActivity {
             }
         });
 
-        hebergementFranceBT = (Button) findViewById(R.id.HebergementFranceBT);
+
+      /*  hebergementFranceBT = (Button) findViewById(R.id.HebergementFranceBT);
         hebergementFranceBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 startActivity(new Intent(ActivityFranceHome.this,ActivityHotelFrance.class));
 
             }
-        });
-
+        });*/
         loisirFranceBT = (Button) findViewById(R.id.LoisirFranceBT);
         loisirFranceBT.setOnClickListener(new View.OnClickListener() {
             @Override

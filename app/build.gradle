@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 31
@@ -42,4 +43,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.hbb20:ccp:2.3.1'
    implementation 'com.google.android.material:material:1.0.0'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
 }
