@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,7 +44,15 @@ Context context;
         holder.service3.setText(h.getService3());
         holder.equipements.setText(h.getEquipements());
         holder.note.setText("Note : "+h.getNote());
+      /*  holder.bouton.setOnClickListener(view -> {
+            UserDatabase userDatabase = UserDatabase.getUserDatabase(context);
+                  //UserEntity.user + h.getIdHotel
 
+
+
+
+        }
+        );*/
 
     }
 
@@ -54,10 +63,10 @@ Context context;
 
     public class HotelViewHolder extends  RecyclerView.ViewHolder{
         TextView   nomHotel,adresse,pension,nbEtoile,prix,service1, service2,  service3,  equipements,  note;
-
+        Button bouton;
         public HotelViewHolder(View itemView){
             super(itemView);
-            nomHotel=(TextView) itemView.findViewById(R.id.nomHotel);
+            nomHotel=(TextView) itemView.findViewById(R.id.nomResto);
             adresse=(TextView)itemView.findViewById(R.id.adresse);
             pension=(TextView) itemView.findViewById(R.id.pension);
             nbEtoile=(TextView) itemView.findViewById(R.id.nbEtoile);
@@ -67,6 +76,7 @@ Context context;
             service3=(TextView) itemView.findViewById(R.id.service3);
             equipements=(TextView) itemView.findViewById(R.id.equipements);
             note=(TextView) itemView.findViewById(R.id.note);
+            bouton=itemView.findViewById(R.id.preferencehotel);
 
 
 

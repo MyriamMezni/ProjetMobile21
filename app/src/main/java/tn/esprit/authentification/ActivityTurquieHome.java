@@ -67,6 +67,17 @@ public class ActivityTurquieHome extends AppCompatActivity {
 
             }
         });
+
+
+        restaurantFranceBT = (Button) findViewById(R.id.RestaurantFranceBT);
+        restaurantFranceBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(ActivityTurquieHome.this,ActivityRestoTurquie.class));
+
+            }
+        });
     }
 
     private void openRetourMainActivity()

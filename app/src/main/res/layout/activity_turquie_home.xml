@@ -47,20 +47,6 @@
         tools:ignore="DuplicateIds" />
 
     <Button
-        android:id="@+id/LoisirFranceBT"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal|center"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="514dp"
-        android:text="Loisir"
-        tools:ignore="DuplicateIds" />
-
-    <Button
         android:id="@+id/RetourMainBT"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="230dp"

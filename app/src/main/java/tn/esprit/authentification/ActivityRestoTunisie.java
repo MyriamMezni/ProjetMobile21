@@ -1,33 +1,38 @@
 package tn.esprit.authentification;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityFranceHome extends AppCompatActivity {
+public class ActivityRestoTunisie extends AppCompatActivity {
 
-    private Button restaurantFranceBT;
-    private Button hebergementFranceBT;
-    private Button loisirFranceBT;
-    private Button retourMainBT;
-
-
-
+    private Button retourAngleterreBT;
+    RecyclerView restorv;
+    RestoAdapter restoAdapter;
+    List<RestoEntity> restos=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_france_home);
+        setContentView(R.layout.activity_resto_tunisie2);
+
+
+
+
+
+
+
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
         bottomNavigationView.setSelectedItemId(R.id.action_profile);
@@ -55,51 +60,43 @@ public class ActivityFranceHome extends AppCompatActivity {
             }
         });
 
-        hebergementFranceBT = (Button) findViewById(R.id.HebergementFranceBT);
-        hebergementFranceBT.setOnClickListener(new View.OnClickListener() {
+        retourAngleterreBT = (Button) findViewById(R.id.RetourFranceBT);
+        retourAngleterreBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startActivity(new Intent(ActivityFranceHome.this,ActivityHotelFrance.class));
-
-            }
-        });
-
-        restaurantFranceBT = (Button) findViewById(R.id.RestaurantFranceBT);
-        restaurantFranceBT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent(ActivityFranceHome.this,ActivityRestoFrance.class));
-
+                openRetourAngleterreActivity();
             }
         });
 
 
-      /*  hebergementFranceBT = (Button) findViewById(R.id.HebergementFranceBT);
-        hebergementFranceBT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent(ActivityFranceHome.this,ActivityHotelFrance.class));
-
-            }
-        });*/
 
 
-        retourMainBT = (Button) findViewById(R.id.RetourMainBT);
-        retourMainBT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openRetourMainActivity();
-            }
-        });
+
+
+        //setupHotels();
+        restos=UserDatabase.getUserDatabase(this).restoDao().ReadAllTunisie();
+        restorv=findViewById(R.id.hotelRecyclerView);
+        restoAdapter=new RestoAdapter(restos,this);
+        restorv.setAdapter(restoAdapter);
+        restorv.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
-
-    private void openRetourMainActivity()
+    private void openRetourAngleterreActivity()
     {
-        Intent intent = new Intent(this, MainActivity3.class);
+        Intent intent = new Intent(this, ActivityTunisieHome.class);
         startActivity(intent);
     }
 }

@@ -6,6 +6,8 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName="users")
 public class UserEntity {
+    public static UserEntity user;
+
      @PrimaryKey(autoGenerate = true)
     Integer id;
 

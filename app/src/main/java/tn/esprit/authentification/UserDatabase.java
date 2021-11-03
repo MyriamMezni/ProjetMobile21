@@ -8,7 +8,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 
-@Database(entities={UserEntity.class,HotelEntity.class},version =3)
+@Database(entities={UserEntity.class,HotelEntity.class,RestoEntity.class},version =5)
 public abstract class UserDatabase extends RoomDatabase {
     private static final String dbName="user";
     private static UserDatabase userDatabase;
@@ -22,5 +22,6 @@ public abstract class UserDatabase extends RoomDatabase {
 
     public abstract UserDao userDao();
     public abstract HotelDao hotelDao();
+    public abstract RestoDao restoDao();
 
 }

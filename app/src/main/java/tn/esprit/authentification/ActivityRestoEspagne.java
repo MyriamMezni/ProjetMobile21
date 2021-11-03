@@ -1,24 +1,38 @@
 package tn.esprit.authentification;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ActivityLoisirsFrance extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
-    private Button retourFranceBT;
+public class ActivityRestoEspagne extends AppCompatActivity {
 
+    private Button retourAngleterreBT;
+    RecyclerView restorv;
+    RestoAdapter restoAdapter;
+    List<RestoEntity> restos=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loisirs_france);
+        setContentView(R.layout.activity_resto_espagne2);
+
+
+
+
+
+
+
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
         bottomNavigationView.setSelectedItemId(R.id.action_profile);
@@ -46,18 +60,43 @@ public class ActivityLoisirsFrance extends AppCompatActivity {
             }
         });
 
-        retourFranceBT = (Button) findViewById(R.id.RetourFranceBT);
-        retourFranceBT.setOnClickListener(new View.OnClickListener() {
+        retourAngleterreBT = (Button) findViewById(R.id.RetourFranceBT);
+        retourAngleterreBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openRetourFranceActivity();
+                openRetourAngleterreActivity();
             }
         });
+
+
+
+
+
+
+        //setupHotels();
+        restos=UserDatabase.getUserDatabase(this).restoDao().ReadAllEspagne();
+        restorv=findViewById(R.id.hotelRecyclerView);
+        restoAdapter=new RestoAdapter(restos,this);
+        restorv.setAdapter(restoAdapter);
+        restorv.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
-    private void openRetourFranceActivity()
+    private void openRetourAngleterreActivity()
     {
-        Intent intent = new Intent(this, ActivityFranceHome.class);
+        Intent intent = new Intent(this, ActivityEspagneHome.class);
         startActivity(intent);
     }
 }

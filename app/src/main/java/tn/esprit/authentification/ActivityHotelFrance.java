@@ -70,7 +70,7 @@ public class ActivityHotelFrance extends AppCompatActivity {
 
 
 
-       //setupHotels();
+       setupHotels();
         hotels=UserDatabase.getUserDatabase(this).hotelDao().ReadAllFrance();
         hotelrv=findViewById(R.id.hotelRecyclerView);
         hotelAdapter=new HotelAdapter(hotels,this);

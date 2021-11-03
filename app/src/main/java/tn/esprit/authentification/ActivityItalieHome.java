@@ -66,6 +66,16 @@ public class ActivityItalieHome extends AppCompatActivity {
 
             }
         });
+
+        restaurantFranceBT = (Button) findViewById(R.id.RestaurantFranceBT);
+        restaurantFranceBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(ActivityItalieHome.this,ActivityRestoItalie.class));
+
+            }
+        });
     }
 
     private void openRetourMainActivity()

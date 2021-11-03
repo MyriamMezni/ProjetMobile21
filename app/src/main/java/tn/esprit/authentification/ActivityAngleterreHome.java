@@ -69,6 +69,17 @@ public class ActivityAngleterreHome extends AppCompatActivity {
 
             }
         });
+
+
+        restaurantFranceBT = (Button) findViewById(R.id.RestaurantFranceBT);
+        restaurantFranceBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(ActivityAngleterreHome.this,ActivityRestoAngleterre.class));
+
+            }
+        });
     }
 
     private void openRetourMainActivity()
