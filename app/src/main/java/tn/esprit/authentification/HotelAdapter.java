@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +26,8 @@ Context context;
     @NonNull
     @Override
     public HotelViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    View view= LayoutInflater.from(context).inflate(R.layout.activity_recyclerview,parent,false);
+
+        View view= LayoutInflater.from(context).inflate(R.layout.activity_recyclerview,parent,false);
     return new HotelViewHolder(view);
     }
 
@@ -44,15 +46,21 @@ Context context;
         holder.service3.setText(h.getService3());
         holder.equipements.setText(h.getEquipements());
         holder.note.setText("Note : "+h.getNote());
-      /*  holder.bouton.setOnClickListener(view -> {
+       holder.bouton.setOnClickListener(view -> {
             UserDatabase userDatabase = UserDatabase.getUserDatabase(context);
                   //UserEntity.user + h.getIdHotel
+           final PreferenceDao PreferenceDao = userDatabase.preferenceDao();
+           Preference p=new Preference(h.getNomHotel().toString(),UserEntity.user.getName().toString(),h.getAdresse(),null,null);
+
+           PreferenceDao.addHotel(p);
+           Toast.makeText(context, "Hotel ajouté", Toast.LENGTH_SHORT).show();
 
 
 
 
-        }
-        );*/
+
+               }
+        );
 
     }
 

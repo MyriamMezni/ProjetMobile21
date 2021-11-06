@@ -62,4 +62,12 @@ public class UserEntity {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public static UserEntity getUser() {
+        return user;
+    }
+
+    public static void setUser(UserEntity user) {
+        UserEntity.user = user;
+    }
 }

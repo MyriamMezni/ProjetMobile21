@@ -1,5 +1,8 @@
 package tn.esprit.authentification;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -7,23 +10,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ActivityNotification extends AppCompatActivity {
-
-    private Button retourMainBT;
+public class preferenceHome extends AppCompatActivity {
+Button prefHotel,prefResto,reservation;
     private TextView nomtv;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification);
+        setContentView(R.layout.activity_preference_home);
+
+
+
         String name=getIntent().getStringExtra("name");
+
+
+
+
+
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
         bottomNavigationView.setSelectedItemId(R.id.action_profile);
@@ -33,7 +38,7 @@ public class ActivityNotification extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profile:
-                        startActivity(new Intent(getApplicationContext(),preferenceHome.class).putExtra("name",name));
+                        startActivity(new Intent(getApplicationContext(),Activity_AllPreference.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
@@ -50,21 +55,37 @@ public class ActivityNotification extends AppCompatActivity {
                 }
             }
         });
-        nomtv=findViewById(R.id.nomtv7);
+        nomtv=findViewById(R.id.nomtv24);
         nomtv.setText("User "+name);
-        retourMainBT = (Button) findViewById(R.id.RetourMainBT);
-        retourMainBT.setOnClickListener(new View.OnClickListener() {
+
+
+        prefHotel = (Button) findViewById(R.id.prefHotel);
+        prefResto = (Button) findViewById(R.id.prefResto);
+        reservation = (Button) findViewById(R.id.reservation);
+
+
+
+
+        prefHotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openRetourMainActivity();
+
+                startActivity(new Intent(preferenceHome.this,Activity_AllPreference.class).putExtra("name",name));
+
             }
         });
-    }
 
-    private void openRetourMainActivity()
-    {
-        String name=getIntent().getStringExtra("name");
-        Intent intent = new Intent(this, MainActivity.class).putExtra("name",name);
-        startActivity(intent);
+
+
+
+
+        prefResto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(preferenceHome.this,preferencesReso.class).putExtra("name",name));
+
+            }
+        });
     }
 }

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -22,10 +23,13 @@ public class ActivityHotelAngleterre extends AppCompatActivity {
     RecyclerView hotelrv;
     HotelAdapter hotelAdapter;
     List<HotelEntity> hotels=new ArrayList<>();
+    private TextView nomtv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_angleterre);
+        String name=getIntent().getStringExtra("name");
 
 
 
@@ -39,17 +43,17 @@ public class ActivityHotelAngleterre extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profile:
-                        startActivity(new Intent(getApplicationContext(),ActivityProfile.class));
+                        startActivity(new Intent(getApplicationContext(),preferenceHome.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_settings:
-                        startActivity(new Intent(getApplicationContext(),MainActivity3.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity3.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_notification:
-                        startActivity(new Intent(getApplicationContext(),login.class));
+                        startActivity(new Intent(getApplicationContext(),login.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
@@ -57,6 +61,8 @@ public class ActivityHotelAngleterre extends AppCompatActivity {
             }
         });
 
+        nomtv=findViewById(R.id.nomtv7);
+        nomtv.setText("User "+name);
         retourAngleterreBT = (Button) findViewById(R.id.RetourFranceBT);
         retourAngleterreBT.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +96,8 @@ public class ActivityHotelAngleterre extends AppCompatActivity {
 
     private void openRetourAngleterreActivity()
     {
-        Intent intent = new Intent(this, ActivityAngleterreHome.class);
+        String name=getIntent().getStringExtra("name");
+        Intent intent = new Intent(this, ActivityAngleterreHome.class).putExtra("name",name);
         startActivity(intent);
     }
 }

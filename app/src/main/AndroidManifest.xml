@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Authentification">
         <activity
+            android:name=".preferencesReso"
+            android:exported="true" />
+        <activity
+            android:name=".preferenceHome"
+            android:exported="true" />
+        <activity
+            android:name=".Activity_AllPreference"
+            android:exported="true" />
+        <activity
             android:name=".ActivityRestoItalie"
             android:exported="true" />
         <activity

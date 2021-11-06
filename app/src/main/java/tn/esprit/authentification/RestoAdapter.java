@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,15 +44,20 @@ public class RestoAdapter  extends RecyclerView.Adapter<RestoAdapter.RestoViewHo
         holder.ouvert.setText(h.getOuvert());
         holder.budget.setText(h.getBudget());
         holder.note.setText(h.getNote());
-      /*  holder.bouton.setOnClickListener(view -> {
-            UserDatabase userDatabase = UserDatabase.getUserDatabase(context);
-                  //UserEntity.user + h.getIdHotel
+        holder.bouton.setOnClickListener(view -> {
+                    UserDatabase userDatabase = UserDatabase.getUserDatabase(context);
+                    //UserEntity.user + h.getIdHotel
+                    final PreferencesRestoDao userDao = userDatabase.preferencesRestoDao();
+
+                    PreferencesRestoEntity p=new PreferencesRestoEntity(h.getNomResto().toString(),h.getAdresse(),UserEntity.user.getName().toString(),null,null);
+                    userDao.addHotel(p);
+                    Toast.makeText(context, "Restaurant ajouté", Toast.LENGTH_SHORT).show();
+
+                });
 
 
 
 
-        }
-        );*/
 
     }
 
@@ -71,7 +77,7 @@ public class RestoAdapter  extends RecyclerView.Adapter<RestoAdapter.RestoViewHo
             ouvert=(TextView) itemView.findViewById(R.id.ouvert);
             budget=(TextView) itemView.findViewById(R.id.budget);
             note=(TextView) itemView.findViewById(R.id.note);
-//            bouton=itemView.findViewById(R.id.preferencehotel);
+            bouton=itemView.findViewById(R.id.preferencehotel);
 
 
 

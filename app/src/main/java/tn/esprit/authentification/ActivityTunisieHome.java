@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +18,14 @@ public class ActivityTunisieHome extends AppCompatActivity {
     private Button restaurantFranceBT;
     private Button hebergementFranceBT;
     private Button loisirFranceBT;
+    private TextView nomtv;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tunisie_home);
+        String name=getIntent().getStringExtra("name");
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
         bottomNavigationView.setSelectedItemId(R.id.action_profile);
@@ -32,23 +35,25 @@ public class ActivityTunisieHome extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profile:
-                        startActivity(new Intent(getApplicationContext(),ActivityProfile.class));
+                        startActivity(new Intent(getApplicationContext(),preferenceHome.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_settings:
-                        startActivity(new Intent(getApplicationContext(),MainActivity3.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity3.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_notification:
-                        startActivity(new Intent(getApplicationContext(),login.class));
+                        startActivity(new Intent(getApplicationContext(),login.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                 }
             }
         });
+        nomtv=findViewById(R.id.nomtv22);
+        nomtv.setText("User "+name);
 
         retourMainBT = (Button) findViewById(R.id.RetourMainBT);
         retourMainBT.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +67,7 @@ public class ActivityTunisieHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(ActivityTunisieHome.this,ActivityHotelTunisie.class));
+                startActivity(new Intent(ActivityTunisieHome.this,Activity_AllPreference.class).putExtra("name",name));
 
             }
         });
@@ -72,15 +77,16 @@ public class ActivityTunisieHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(ActivityTunisieHome.this,ActivityRestoTunisie.class));
+                startActivity(new Intent(ActivityTunisieHome.this,ActivityRestoTunisie.class).putExtra("name",name));
 
             }
         });
     }
 
     private void openRetourMainActivity()
-    {
-        Intent intent = new Intent(this, MainActivity3.class);
+    {        String name=getIntent().getStringExtra("name");
+
+        Intent intent = new Intent(this, MainActivity3.class).putExtra("name",name);
         startActivity(intent);
     }
 }
