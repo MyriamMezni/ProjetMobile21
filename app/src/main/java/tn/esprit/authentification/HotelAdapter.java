@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,7 +26,8 @@ Context context;
     @NonNull
     @Override
     public HotelViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    View view= LayoutInflater.from(context).inflate(R.layout.activity_recyclerview,parent,false);
+
+        View view= LayoutInflater.from(context).inflate(R.layout.activity_recyclerview,parent,false);
     return new HotelViewHolder(view);
     }
 
@@ -43,7 +46,21 @@ Context context;
         holder.service3.setText(h.getService3());
         holder.equipements.setText(h.getEquipements());
         holder.note.setText("Note : "+h.getNote());
+       holder.bouton.setOnClickListener(view -> {
+            UserDatabase userDatabase = UserDatabase.getUserDatabase(context);
+                  //UserEntity.user + h.getIdHotel
+           final PreferenceDao PreferenceDao = userDatabase.preferenceDao();
+           Preference p=new Preference(h.getNomHotel().toString(),UserEntity.user.getName().toString(),h.getAdresse(),null,null);
 
+           PreferenceDao.addHotel(p);
+           Toast.makeText(context, "Hotel ajouté", Toast.LENGTH_SHORT).show();
+
+
+
+
+
+               }
+        );
 
     }
 
@@ -54,10 +71,10 @@ Context context;
 
     public class HotelViewHolder extends  RecyclerView.ViewHolder{
         TextView   nomHotel,adresse,pension,nbEtoile,prix,service1, service2,  service3,  equipements,  note;
-
+        Button bouton;
         public HotelViewHolder(View itemView){
             super(itemView);
-            nomHotel=(TextView) itemView.findViewById(R.id.nomHotel);
+            nomHotel=(TextView) itemView.findViewById(R.id.nomResto);
             adresse=(TextView)itemView.findViewById(R.id.adresse);
             pension=(TextView) itemView.findViewById(R.id.pension);
             nbEtoile=(TextView) itemView.findViewById(R.id.nbEtoile);
@@ -67,6 +84,7 @@ Context context;
             service3=(TextView) itemView.findViewById(R.id.service3);
             equipements=(TextView) itemView.findViewById(R.id.equipements);
             note=(TextView) itemView.findViewById(R.id.note);
+            bouton=itemView.findViewById(R.id.preferencehotel);
 
 
 

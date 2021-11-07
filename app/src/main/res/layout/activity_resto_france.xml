@@ -7,26 +7,36 @@
     tools:context=".ActivityRestoFrance">
 
     <TextView
+        android:id="@+id/hebergementtext"
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:fontFamily="cursive"
+        android:text="Restaurant en France"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="50dp" />
+
+    <TextView
+        android:id="@+id/nomtv17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:fontFamily="cursive"
-        android:textAlignment="center"
-        android:text="Resto"
-        android:textColor="@color/black"
-        android:textSize="50dp"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="706dp"
+        android:text="TextView" />
 
     <Button
         android:id="@+id/RetourFranceBT"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-        android:layout_width="230dp"
+        android:layout_width="134dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal|center"
-        android:layout_marginStart="91dp"
-        android:layout_marginTop="533dp"
+        android:layout_marginStart="215dp"
+        android:layout_marginTop="627dp"
         android:text="Retour"
         tools:ignore="DuplicateIds" />
 
@@ -38,5 +48,15 @@
         android:layout_alignParentStart="true"
         android:background="@android:color/white"
         app:menu="@menu/bottom_menu"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hotelRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hebergementtext" android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:layout_editor_absoluteX="1dp"
+        tools:listitem="@layout/activity_recycerviewresto" />
+
 
 </RelativeLayout>

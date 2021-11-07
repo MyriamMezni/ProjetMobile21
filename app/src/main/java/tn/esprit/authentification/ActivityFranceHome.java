@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ public class ActivityFranceHome extends AppCompatActivity {
     private Button hebergementFranceBT;
     private Button loisirFranceBT;
     private Button retourMainBT;
+    private TextView nomtv;
 
 
 
@@ -28,6 +30,7 @@ public class ActivityFranceHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_france_home);
+        String name=getIntent().getStringExtra("name");
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
         bottomNavigationView.setSelectedItemId(R.id.action_profile);
@@ -37,30 +40,32 @@ public class ActivityFranceHome extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profile:
-                        startActivity(new Intent(getApplicationContext(),ActivityProfile.class));
+                        startActivity(new Intent(getApplicationContext(),preferenceHome.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_settings:
-                        startActivity(new Intent(getApplicationContext(),MainActivity3.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity3.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_notification:
-                        startActivity(new Intent(getApplicationContext(),login.class));
+                        startActivity(new Intent(getApplicationContext(),login.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                 }
             }
         });
+        nomtv=findViewById(R.id.nomtv5);
+        nomtv.setText("User "+name);
 
         hebergementFranceBT = (Button) findViewById(R.id.HebergementFranceBT);
         hebergementFranceBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(ActivityFranceHome.this,ActivityHotelFrance.class));
+                startActivity(new Intent(ActivityFranceHome.this,ActivityHotelFrance.class).putExtra("name",name));
 
             }
         });
@@ -70,7 +75,7 @@ public class ActivityFranceHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(ActivityFranceHome.this,ActivityRestoFrance.class));
+                startActivity(new Intent(ActivityFranceHome.this,ActivityRestoFrance.class).putExtra("name",name));
 
             }
         });
@@ -85,15 +90,7 @@ public class ActivityFranceHome extends AppCompatActivity {
 
             }
         });*/
-        loisirFranceBT = (Button) findViewById(R.id.LoisirFranceBT);
-        loisirFranceBT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                startActivity(new Intent(ActivityFranceHome.this,ActivityLoisirsFrance.class));
-
-            }
-        });
 
         retourMainBT = (Button) findViewById(R.id.RetourMainBT);
         retourMainBT.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +104,9 @@ public class ActivityFranceHome extends AppCompatActivity {
 
     private void openRetourMainActivity()
     {
-        Intent intent = new Intent(this, MainActivity3.class);
+        String name=getIntent().getStringExtra("name");
+
+        Intent intent = new Intent(this, MainActivity3.class).putExtra("name",name);
         startActivity(intent);
     }
 }

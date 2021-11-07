@@ -7,6 +7,16 @@
     tools:context=".ActivitySettings">
 
     <TextView
+        android:id="@+id/nomtv21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="706dp"
+        android:text="TextView" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

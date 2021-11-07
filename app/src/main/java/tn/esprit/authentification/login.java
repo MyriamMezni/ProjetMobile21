@@ -45,6 +45,8 @@ Button login;
                     }else
                     {
                         String name=userEntity.name;
+                        int id=userEntity.getId();
+                        UserEntity.user=userEntity;
                         startActivity(new Intent(login.this,MainActivity3.class).putExtra("name",name));
                     }
                        }

@@ -24,12 +24,15 @@ public class ActivityHotelFrance extends AppCompatActivity {
     RecyclerView hotelrv;
     HotelAdapter hotelAdapter;
     List<HotelEntity> hotels=new ArrayList<>();
+    private TextView nomtv;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_france);
+        String name=getIntent().getStringExtra("name");
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
         bottomNavigationView.setSelectedItemId(R.id.action_profile);
@@ -39,24 +42,25 @@ public class ActivityHotelFrance extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profile:
-                        startActivity(new Intent(getApplicationContext(),ActivityProfile.class));
+                        startActivity(new Intent(getApplicationContext(),preferenceHome.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_settings:
-                        startActivity(new Intent(getApplicationContext(),MainActivity3.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity3.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_notification:
-                        startActivity(new Intent(getApplicationContext(),login.class));
+                        startActivity(new Intent(getApplicationContext(),login.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                 }
             }
         });
-
+        nomtv=findViewById(R.id.nomtv9);
+        nomtv.setText("User "+name);
         retourFranceBT = (Button) findViewById(R.id.RetourFranceBT);
         retourFranceBT.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +88,8 @@ public class ActivityHotelFrance extends AppCompatActivity {
 
     private void openRetourFranceActivity()
     {
-        Intent intent = new Intent(this, ActivityFranceHome.class);
+        String name=getIntent().getStringExtra("name");
+        Intent intent = new Intent(this, ActivityFranceHome.class).putExtra("name",name);
         startActivity(intent);
     }
 

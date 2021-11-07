@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -21,10 +22,14 @@ public class ActivityHotelEspagne extends AppCompatActivity {
     RecyclerView hotelrv;
     HotelAdapter hotelAdapter;
     List<HotelEntity> hotels=new ArrayList<>();
+    private TextView nomtv;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_espagne);
+        String name=getIntent().getStringExtra("name");
 
 
 
@@ -36,24 +41,25 @@ public class ActivityHotelEspagne extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.action_profile:
-                        startActivity(new Intent(getApplicationContext(),ActivityProfile.class));
+                        startActivity(new Intent(getApplicationContext(),preferenceHome.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_settings:
-                        startActivity(new Intent(getApplicationContext(),MainActivity3.class));
+                        startActivity(new Intent(getApplicationContext(),MainActivity3.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_notification:
-                        startActivity(new Intent(getApplicationContext(),login.class));
+                        startActivity(new Intent(getApplicationContext(),login.class).putExtra("name",name));
                         finish();
                         overridePendingTransition(0,0);
                         return;
                 }
             }
         });
-
+        nomtv=findViewById(R.id.nomtv8);
+        nomtv.setText("User "+name);
         retourEspagneBT = (Button) findViewById(R.id.RetourFranceBT);
         retourEspagneBT.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +86,8 @@ public class ActivityHotelEspagne extends AppCompatActivity {
 
     private void openRetourEspagneActivity()
     {
-        Intent intent = new Intent(this, ActivityEspagneHome.class);
+        String name=getIntent().getStringExtra("name");
+        Intent intent = new Intent(this, ActivityEspagneHome.class).putExtra("name",name);
         startActivity(intent);
     }
 }
