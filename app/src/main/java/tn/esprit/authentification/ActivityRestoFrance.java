@@ -77,7 +77,7 @@ public class ActivityRestoFrance extends AppCompatActivity {
 
 
 
-        //setupRestos();
+      //  setupRestos();
         restos=UserDatabase.getUserDatabase(this).restoDao().ReadAllFrance();
         restorv=findViewById(R.id.hotelRecyclerView);
         restoAdapter=new RestoAdapter(restos,this);

@@ -1,6 +1,7 @@
 package tn.esprit.authentification;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,11 +56,18 @@ public class RestoAdapter  extends RecyclerView.Adapter<RestoAdapter.RestoViewHo
 
                 });
 
+        holder.reserver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                v.getContext().startActivity(new Intent(v.getContext(), ActivityReservationResto.class).putExtra("nomReso",holder.nomResto.getText()).putExtra("adresse",holder.adresse.getText()));
+            }
+        });
 
 
 
     }
+
 
     @Override
     public int getItemCount() {
@@ -68,7 +76,7 @@ public class RestoAdapter  extends RecyclerView.Adapter<RestoAdapter.RestoViewHo
 
     public class RestoViewHolder extends  RecyclerView.ViewHolder{
         TextView nomResto,  adresse,  cuisine,  ouvert,  budget,  note;
-        Button bouton;
+        Button bouton,reserver;
         public RestoViewHolder(View itemView){
             super(itemView);
             nomResto=(TextView) itemView.findViewById(R.id.nomResto);
@@ -78,6 +86,7 @@ public class RestoAdapter  extends RecyclerView.Adapter<RestoAdapter.RestoViewHo
             budget=(TextView) itemView.findViewById(R.id.budget);
             note=(TextView) itemView.findViewById(R.id.note);
             bouton=itemView.findViewById(R.id.preferencehotel);
+            reserver=itemView.findViewById(R.id.reserver);
 
 
 

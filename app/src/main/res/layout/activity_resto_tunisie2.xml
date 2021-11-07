@@ -53,7 +53,8 @@
         android:id="@+id/hotelRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/hebergementtext" android:orientation="vertical"
+        android:layout_below="@+id/hebergementtext"
+        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:layout_editor_absoluteX="1dp"
         tools:listitem="@layout/activity_recycerviewresto" />

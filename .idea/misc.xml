@@ -29,12 +29,14 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_main3.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_notification.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_preference_home.xml" value="0.1" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_preferencereservation.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_preferences_reso.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_profile.xml" value="0.13994565217391305" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_recycerviewresto.xml" value="0.22" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_recyclepreference.xml" value="0.6666666666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_recyclepreferenceresto.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_recyclerview.xml" value="0.22" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_reservation_resto.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_restaurant_france.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_resto_angleterre.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/activity_resto_angleterre2.xml" value="0.12047101449275362" />
@@ -52,6 +54,7 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/fragment_list.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/hotelfrancerecycler.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/recyclehotel.xml" value="0.1" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/layout/recyclereservationresto.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/menu/bottom_menu.xml" value="0.1796875" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Authentification/app/src/main/res/menu/navigation_items.xml" value="0.14666666666666667" />
       </map>

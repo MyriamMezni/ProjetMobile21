@@ -87,5 +87,20 @@ Button prefHotel,prefResto,reservation;
 
             }
         });
+
+
+
+
+
+
+        reservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(preferenceHome.this,preferencereservation.class).putExtra("name",name));
+
+            }
+        });
+
     }
 }

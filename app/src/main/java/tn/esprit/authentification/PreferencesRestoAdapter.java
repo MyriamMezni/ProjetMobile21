@@ -58,9 +58,9 @@ public class PreferencesRestoAdapter  extends RecyclerView.Adapter<PreferencesRe
         Button bouton;
         public PreferenceViewHolder(View itemView){
             super(itemView);
-            nomRestoo=(TextView) itemView.findViewById(R.id.nomHotell);
-            nomUser=(TextView) itemView.findViewById(R.id.nomUser);
-            adr=(TextView) itemView.findViewById(R.id.adr);
+            nomRestoo=(TextView) itemView.findViewById(R.id.heure);
+            nomUser=(TextView) itemView.findViewById(R.id.nomrestaurant);
+            adr=(TextView) itemView.findViewById(R.id.adresserestaurant);
 
             bouton=itemView.findViewById(R.id.preferencehotel);
 

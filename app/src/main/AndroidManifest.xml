@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Authentification">
         <activity
+            android:name=".preferencereservation"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityReservationResto"
+            android:exported="true" />
+        <activity
             android:name=".preferencesReso"
             android:exported="true" />
         <activity
