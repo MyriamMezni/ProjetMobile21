@@ -7,6 +7,7 @@
     tools:layout_editor_absoluteX="5dp"
     tools:layout_editor_absoluteY="-122dp">
 
+
     <TextView
         android:id="@+id/nomrestaurant"
         android:layout_width="413dp"
@@ -20,7 +21,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.054" />
 
-
     <TextView
         android:id="@+id/heure"
         android:layout_width="407dp"
@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425" />
+        app:layout_constraintVertical_bias="0.444" />
 
     <TextView
         android:id="@+id/jour"
@@ -71,6 +71,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintVertical_bias="0.243" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
