@@ -47,7 +47,7 @@ public class ActivityAngleterreHome extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return;
                     case R.id.action_notification:
-                        startActivity(new Intent(getApplicationContext(),login.class).putExtra("name",name));
+                        startActivity(new Intent(getApplicationContext(),login.class));
                         finish();
                         overridePendingTransition(0,0);
                         return;
