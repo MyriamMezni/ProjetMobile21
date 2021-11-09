@@ -7,6 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".ActivityFranceHome">
 
+    <ImageView
+        android:layout_width="234dp"
+        android:layout_height="133dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-56dp"
+        android:layout_marginTop="-43dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="488dp"
+        android:src="@drawable/flag_france">
+
+    </ImageView>
+
     <TextView
         android:id="@+id/nomtv5"
         android:layout_width="wrap_content"

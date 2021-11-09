@@ -7,6 +7,20 @@
     android:background="@drawable/back3"
     tools:context=".ActivityAngleterreHome">
 
+    <ImageView
+        android:layout_width="234dp"
+        android:layout_height="133dp"
+        android:layout_alignBottom="@+id/navigation"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="488dp"
+        android:src="@drawable/flag_united_kingdom">
+
+    </ImageView>
     <TextView
         android:id="@+id/nomtv3"
         android:layout_width="wrap_content"
